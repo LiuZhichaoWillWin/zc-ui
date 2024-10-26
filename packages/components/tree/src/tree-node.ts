@@ -6,7 +6,10 @@ export interface TreeNode extends TreeNodeOption {
   children: TreeNode[];
   isLeaf: boolean;
   isExpanded: boolean;
+<<<<<<< HEAD
   isLoading?: boolean;
+=======
+>>>>>>> d27c22f (first connit)
   loaded?: boolean;
   raw: TreeNodeOption;
 }

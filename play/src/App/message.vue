@@ -5,8 +5,12 @@ import { MessageType } from "@zc-ui/components/message/src/types";
 const handleClick = (type: string) => {
 	Message({
 		type: type as MessageType,
+<<<<<<< HEAD
 		// message: "shaoidhsaodhasiohdoisa",
 		duration: 3000
+=======
+		message: "shaoidhsaodhasiohdoisa",
+>>>>>>> d27c22f (first connit)
 	});
 };
 </script>
