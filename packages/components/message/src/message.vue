@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, toRefs, computed, onMounted, provide } from 'vue';
+import { ref, reactive, toRefs, computed } from 'vue';
 import { MessageProps } from "./message";
 import { MessageType, types } from "./types";
 

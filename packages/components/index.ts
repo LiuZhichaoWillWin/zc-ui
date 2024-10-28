@@ -1,12 +1,12 @@
 import { Plugin, App } from "vue";
 
-import ZcIcon from "./icons/index";
-import ZcTree from "./tree/index";
-import ZcVirtualList from "./virtual-list";
-import ZcCalendar from "./calendar";
-import ZcMessage from "./message";
+import Icon from "./icons/index";
+import Tree from "./tree/index";
+import VirtualList from "./virtual-list";
+import Calendar from "./calendar";
+import MessageBox from "./message-box";
 
-const components = [ZcIcon, ZcTree, ZcVirtualList, ZcCalendar, ZcMessage];
+const components = [Icon, Tree, VirtualList, Calendar,  MessageBox];
 
 const ZCUI: Plugin = {
 	install(app: App) {

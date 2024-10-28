@@ -1,7 +1,7 @@
 import { MessageType } from "./types";
 
 export interface MessageProps {
-  type: MessageType;
+  type?: MessageType;
   message?: string;
   duration?: number;
 }

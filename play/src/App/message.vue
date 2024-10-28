@@ -5,7 +5,8 @@ import { MessageType } from "@zc-ui/components/message/src/types";
 const handleClick = (type: string) => {
 	Message({
 		type: type as MessageType,
-		message: "shaoidhsaodhasiohdoisa",
+		// message: "shaoidhsaodhasiohdoisa",
+		duration: 3000
 	});
 };
 </script>

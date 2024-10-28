@@ -10,7 +10,8 @@ const Message = async (options: MessageOptions) => {
 	const [comp, app] = createMessage(options);
 	showMessage(comp);
 
-	hiddenMessage(comp, app, options.duration || 3000);
+	await hiddenMessage(comp, options.duration || 3000);
+	deleteMessage(comp, app);
 };
 
 function createMessage(options: MessageOptions) {
@@ -34,32 +35,24 @@ function createMessage(options: MessageOptions) {
 }
 
 function showMessage(comp: MessageInstance) {
-	return new Promise<boolean>((resolve, reject) => {
-		comp.setVisible(true);
-		resolve(true);
-	});
+	comp.setVisible(true);
 }
 
-function hiddenMessage(comp: MessageInstance, app: App, duration: number) {
-	const timer = setTimeout(async () => {
-		clearTimeout(timer);
-		comp.setVisible(false);
-		await deleteMessage(comp);
-		unmountMessage(app);
-	}, duration);
-}
-
-async function deleteMessage(comp: MessageInstance) {
+function hiddenMessage(comp: MessageInstance, duration: number) {
 	return new Promise((resolve) => {
-		const index = store.value.findIndex((item) => {
-			return item === comp;
-		});
-		store.value.splice(index, 1);
-		resolve(true);
+		const timer = setTimeout(async () => {
+			clearTimeout(timer);
+			comp.setVisible(false);
+			resolve(true);
+		}, duration);
 	});
 }
 
-function unmountMessage(app: App) {
+async function deleteMessage(comp: MessageInstance, app: App) {
+	const index = store.value.findIndex((item) => {
+		return item === comp;
+	});
+	store.value.splice(index, 1);
 	app.unmount();
 }
 
