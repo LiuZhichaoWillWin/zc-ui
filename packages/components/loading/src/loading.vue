@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const isLoading = defineModel("isLoading", {
 	default: false,
@@ -44,7 +46,7 @@ defineExpose({
 			ref="oLoadingBox"
 			v-if="isLoading"
 		>
-			<i></i>
+			<font-awesome-icon :icon="faSpinner" />
 			<span>{{ text }}</span>
 		</div>
 	</transition>
@@ -61,6 +63,9 @@ defineExpose({
 	background-color: rgba(1, 1, 1, 0.2);
 	&.zc-loading__box--fullscreen {
 		position: fixed;
+	}
+	& > span {
+		padding: 5px;
 	}
 }
 .zc-loading-enter-from,

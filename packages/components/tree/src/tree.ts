@@ -1,5 +1,4 @@
 import { ExtractPublicPropTypes, PropType, Slots } from "vue";
-import { virtualListProps } from "../../virtual-list/src/virtual-list";
 // 用户传递的树节点
 export interface TreeNodeOption {
 	label?: string;
@@ -42,11 +41,6 @@ export const treeProps = {
 		type: Boolean,
 		default: false,
 	},
-	// useVirttualList: {
-	// 	type: Boolean,
-	// 	default: false,
-	// },
-	// virtualListOption: virtualListProps,
 };
 
 // 供用户定义树Props的类型
